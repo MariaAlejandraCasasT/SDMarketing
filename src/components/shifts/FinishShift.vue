@@ -148,13 +148,12 @@ export default defineComponent({
 
 <template>
   <loading-overlay :show="isLoading" />
-
     <header class="header">
       <RouterLink to="/"><Button class = "inicio">Inicio</Button></RouterLink>
         
     </header>
-    <div class="container">
     <section class="form-content max-w-lg mx-auto p-6 shadow-md">
+      <div class="container">
         <h1 class="text-2xl font-bold mb-4">Finalizar Turno</h1>
         <Select v-model="selectedUsername">
             <SelectTrigger class="font-bold3">
@@ -188,8 +187,8 @@ export default defineComponent({
             <Button class = "sesion" @click="finalizarTurno" >Finalizar</Button>
             </div>
         </div>
+      </div>
     </section>
-  </div>
 </template>
 
 <style scoped>
@@ -259,6 +258,43 @@ export default defineComponent({
     align-items: flex-start;
   }
   .container{
+    width: 100%;
+    height: 120vh;
+  }
+  .form-content{
+    display: grid !important;
+		align-content: center !important;
+    background-color: #19191a !important;
+    margin: 0px 0px 0px 0px;
+  }
+}
+@media (min-width: 450px) and (max-width: 1100px){
+  .header{
+    background-color: #19191a;
+    padding: 10% 10% 10% 10%;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .container{
+    width: 100%;
+    height: 110vh;
+  }
+  .form-content{
+    display: grid !important;
+		align-content: center !important;
+    padding: 0px 30px 250px 30px;
+    margin: 0px 0px 0px 0px;
+    background-color: #19191a;
+  }
+}
+@media (min-width: 1100px) and (max-width: 1550px){
+  .header{
+    background-color: #19191a;
+    padding: 5% 5% 5% 5%;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .container{
     padding: 0px 0px 0px 0px;
     height: 110vh;
   }
@@ -267,18 +303,6 @@ export default defineComponent({
 		align-content: center !important;
     padding: 0px 30px 250px 30px;
     background-color: #19191a;
-    width: 170%;
-    height: 100vh;
-  }
-}
-@media (min-width: 450px) and (max-width: 920px){
-  .container{
-    padding: 0px 0px 0px 0px;
-  }
-}
-@media (min-width: 920px) and (max-width: 1550px){
-  .container{
-    padding: 0px 0px 0px 0px;
   }
 }
 </style>
